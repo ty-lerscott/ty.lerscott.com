@@ -26,8 +26,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
       - name: Upload to server
-        uses: shimataro/ssh-key-action@v2.1.0
-      - run: rsync -r ./client ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.CLIENT_PATH }}
+        run: rsync -r ./client ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.CLIENT_PATH }}
 #    - run: npm ci
 #    - run: # NODE_ENV=production npm run build-storybook
 #    - run: NODE_ENV=production npm run build
