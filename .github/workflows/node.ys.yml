@@ -21,10 +21,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: ls -asl
       - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2.1.0
+        uses: shimataro/ssh-key-action@v2.3.0
         with:
           key: ${{ secrets.SSH_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: replace
       - name: Upload to server
         run: rsync -r ./client ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.CLIENT_PATH }}
 #    - run: npm ci
