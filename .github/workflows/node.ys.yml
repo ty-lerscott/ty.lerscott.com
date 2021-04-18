@@ -20,14 +20,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: ls -asl
-      - name: Install Key
+      - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2.1.0
         with:
           key: ${{ secrets.SSH_KEY }}
-          if_key_exists: ignore
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      # - name: Rsync
-      #   run:
+      - name: Upload to server
+      - run: rsync -r ./client ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.CLIENT_PATH }}
 #    - run: npm ci
 #    - run: # NODE_ENV=production npm run build-storybook
 #    - run: NODE_ENV=production npm run build
