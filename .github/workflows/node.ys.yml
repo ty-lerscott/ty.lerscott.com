@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Print out information
       - run: ls -asl
 #    - run: npm ci
 #    - run: # NODE_ENV=production npm run build-storybook
