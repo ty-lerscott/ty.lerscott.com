@@ -15,18 +15,21 @@ jobs:
         node-version: [12.13.0]
     steps:
       - uses: actions/checkout@v2
-      - name: Install Using Node.js ${{ matrix.node-version }}
+      - name: Installing Using Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Describing directory
         run: |
           ls -asl;
           node -v;
           npm -v;
-
+      - name: Installing node_modules
+        run: |
           cd client;
-
           npm ci;
+      - name: Building app
+        run: |
           npm run build;
           cd ../;
       - name: Install SSH Key
