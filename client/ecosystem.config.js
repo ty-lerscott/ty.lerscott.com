@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "ty.lerscott.com - client",
       script: "npm",
-      args: "start",
+      args: "start -- -p 2442",
       watch: true,
     },
   ],
