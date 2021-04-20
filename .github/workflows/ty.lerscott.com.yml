@@ -1,4 +1,4 @@
-name: Build and Deploy Everything
+name: ty.lerscott.com
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Build and Deploy Everything
+name: watercoo.lerscott.com
 
 on:
   push:
