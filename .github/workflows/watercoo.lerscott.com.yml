@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - client/**
+      - wordpress/**
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,19 +23,11 @@ jobs:
           ls -asl;
           node -v;
           npm -v;
-      - name: Installing node_modules
-        run: |
-          cd client;
-          npm ci;
-      - name: Building app
-        run: |
-          cd client;
-          npm run build;
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2.3.0
         with:
           key: ${{ secrets.SSH_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: replace
-      - name: Uploading Client to Beacon Hills
-        run: rsync -r ./client ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.CLIENT_PATH }}
+      - name: Uploading Wordpress to Beacon Hills
+        run: rsync -r ./wordpress ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WP_PATH }}
