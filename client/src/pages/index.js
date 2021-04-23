@@ -1,34 +1,32 @@
 import Head from "next/head";
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
+import { QueryClient } from "react-query";
+import { dehydrate } from "react-query/hydration";
 
-const styles = {};
+import Header from "components/Header";
+import { getMainMenu } from "api/menu/get-menu";
 
-const Home = () => {
+const Home = ({ dehydratedState }) => {
   return (
-    <Container h="100vh" w="100vw">
+    <>
       <Head>
         <title>Tyler Scott | Javascript Software Engineer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Box
-        h="100%"
-        as="main"
-        bg="#1a221b"
-        display="flex"
-        color="#e0d6c6"
-        alignItems="center"
-        flexDirection="column"
-        justifyContent="center"
-      >
-        <Heading as="h1" fontSize="2xl">
-          ty.lerscott.com
-        </Heading>
-
-        <Text>Coming Soon</Text>
-      </Box>
-    </Container>
+      <Header />
+    </>
   );
 };
+
+export async function getServerSideProps(context) {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery("main-menu", getMainMenu);
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
 
 export default Home;
