@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./client/.env.local;
+export $(egrep -v '^#' ./client/.env.local | xargs)
 
 echo "UPLOADING to $DB_NAME..."
 

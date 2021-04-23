@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./client/.env.local;
+export $(egrep -v '^#' ./client/.env.local | xargs)
 
 echo "DROPPING $DB_NAME..."
 
