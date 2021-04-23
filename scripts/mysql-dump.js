@@ -36,14 +36,14 @@ const prepare = (dump) => {
   if (forProd) {
     dump = dump.replace(
       /http:\/\/ty\.lerscott\.local/g,
-      "https://ty.lerscott.com"
+      "https://watercoo.lerscott.com"
     );
   }
 
-  // if forProd, replace local with prod url
+  // if forDev, replace prod with local url
   if (forDev) {
     dump = dump.replace(
-      /https:\/\/ty\.lerscott\.com/g,
+      /https:\/\/watercoo\.lerscott\.com/g,
       "http://ty.lerscott.local"
     );
   }
