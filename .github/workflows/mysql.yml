@@ -29,6 +29,6 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: replace
       - name: Uploading mysql to Beacon Hills
-        run: rsync -r ./mysql ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.MYSQL_PATH }}
+        run: rsync -r ./mysql ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DIR_PATH }}
       - name: Uploading root package.json to Beacon Hills
         run: rsync -r ./package*.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DIR_PATH }}
