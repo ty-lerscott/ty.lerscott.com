@@ -1,6 +1,9 @@
 const fs = require("fs");
 const { parsed: env } = require("dotenv").config({
-  path: "./client/.env.local",
+  path:
+    process.env.NODE_ENV === "production"
+      ? "./client/.env.production"
+      : "./client/.env.local",
 });
 const mysqldump = require("mysqldump");
 

@@ -32,11 +32,15 @@ jobs:
           cd client;
           npm run build;
         env:
-          NEXT_PUBLIC_WORDPRESS_API_URL: ${{ secrets.WORDPRESS_API_URL }}
+          PORT: ${{ secrets.PORT }}
+          HOST: ${{ secrets.HOST }}
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASS: ${{ secrets.DB_PASS }}
           DB_NAME: ${{ secrets.DB_NAME }}
           DB_HOST: ${{ secrets.DB_HOST }}
+          HOSTNAME: ${{ secrets.HOSTNAME }}
+          DB_BACKUP: ${{ secrets.DB_BACKUP }}
+          NEXT_PUBLIC_WORDPRESS_API_URL: ${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2.3.0
         with:
