@@ -4,8 +4,6 @@ const { parsed: env } = require("dotenv").config({
 });
 const mysqldump = require("mysqldump");
 
-const dumpToFilePath = "./mysql/ty_lerscott.sql";
-
 const forProd =
   process.argv.includes("--production") || process.argv.includes("-p");
 const forDev =
@@ -20,10 +18,10 @@ const getDump = async () => {
       database: env.DB_NAME,
       password: env.DB_PASS,
     },
-    dumpToFile: dumpToFilePath,
+    dumpToFile: env.DB_BACKUP,
   });
 
-  return fs.readFileSync(dumpToFilePath, "utf8");
+  return fs.readFileSync(env.DB_BACKUP, "utf8");
 };
 // TODO: compress this file
 const prepare = (dump) => {
@@ -48,9 +46,9 @@ const prepare = (dump) => {
     );
   }
 
-  fs.writeFileSync(dumpToFilePath, dump, "utf-8");
+  fs.writeFileSync(env.DB_BACKUP, dump, "utf-8");
 
-  console.log("DB back up complete :)~");
+  console.log("DB back up complete :)");
 
   return;
 };

@@ -5,13 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "mysql-import": "^5.0.21",
     "mysqldump": "^3.2.0"
   },
   "devDependencies": {},
   "scripts": {
     "db:dump": "node scripts/mysql-dump.js",
-    "db:import": "node scripts/mysql-import.js",
+    "presdb:import": "sh scripts/mysql-truncate.sh",
+    "db:import": "sh scripts/mysql-import.sh",
     "db:dump:dev": "npm run db:dump -- --development",
     "db:dump:prod": "npm run db:dump -- --production"
   },
