@@ -10,7 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "db:dump": "node scripts/mysql-dump.js",
-    "presdb:import": "sh scripts/mysql-truncate.sh",
+    "predb:import": "sh scripts/mysql-truncate.sh",
     "db:import": "sh scripts/mysql-import.sh",
     "db:dump:dev": "npm run db:dump -- --development",
     "db:dump:prod": "npm run db:dump -- --production"

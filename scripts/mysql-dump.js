@@ -19,6 +19,7 @@ const getDump = async () => {
       password: env.DB_PASS,
     },
     dumpToFile: env.DB_BACKUP,
+    compressFile: true,
   });
 
   return fs.readFileSync(env.DB_BACKUP, "utf8");
@@ -46,7 +47,13 @@ const prepare = (dump) => {
     );
   }
 
-  fs.writeFileSync(env.DB_BACKUP, dump, "utf-8");
+  const prodBackupPath = forProd
+    ? env.DB_BACKUP.includes("prod")
+      ? env.DB_BACKUP
+      : env.DB_BACKUP.replace(".sql", ".prod.sql")
+    : "";
+
+  fs.writeFileSync(prodBackupPath || env.DB_BACKUP, dump, "utf-8");
 
   console.log("DB back up complete :)");
 
