@@ -1,0 +1,32 @@
+name: scripts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.13.0]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing Using Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Describing directory
+        run: |
+          ls -asl;
+          node -v;
+          npm -v;
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2.3.0
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: replace
+      - name: Uploading scripts to Beacon Hills
+        run: rsync -r ./scripts ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SCRIPTS_PATH }}
