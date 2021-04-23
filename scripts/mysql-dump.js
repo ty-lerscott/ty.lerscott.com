@@ -19,7 +19,6 @@ const getDump = async () => {
       password: env.DB_PASS,
     },
     dumpToFile: env.DB_BACKUP,
-    compressFile: true,
   });
 
   return fs.readFileSync(env.DB_BACKUP, "utf8");
