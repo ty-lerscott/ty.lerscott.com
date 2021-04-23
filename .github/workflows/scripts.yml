@@ -5,8 +5,8 @@ on:
     branches: [main]
     paths:
       - scripts/**
-      - package.json
-      - package-lock.json
+      - ./package.json
+      - ./package-lock.json
 jobs:
   build:
     runs-on: ubuntu-latest
