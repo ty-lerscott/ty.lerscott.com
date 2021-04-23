@@ -4,19 +4,16 @@ import { request, gql } from "graphql-request";
 
 export const getMainMenu = async () => {
   try {
-    const { menus } = await request(
+    const { menu } = await request(
       process.env.NEXT_PUBLIC_WORDPRESS_API_URL,
       gql`
         {
-          menus(where: { slug: "main-menu" }) {
-            nodes {
-              menuItems {
-                nodes {
-                  url
-                  label
-                  target
-                  path
-                }
+          menu(id: "Main Menu", idType: NAME) {
+            menuItems {
+              nodes {
+                url
+                label
+                target
               }
             }
           }
@@ -24,7 +21,7 @@ export const getMainMenu = async () => {
       `
     );
 
-    return menus?.nodes?.[0]?.menuItems?.nodes || [];
+    return menu?.menuItems?.nodes || [];
   } catch (err) {
     console.log(err);
   }
