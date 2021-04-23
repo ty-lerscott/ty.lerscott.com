@@ -50,7 +50,7 @@ const prepare = (dump) => {
 
   fs.writeFileSync(dumpToFilePath, dump, "utf-8");
 
-  console.log("DB back up complete :)");
+  console.log("DB back up complete :)~");
 
   return;
 };

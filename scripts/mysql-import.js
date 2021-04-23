@@ -13,8 +13,6 @@ const importer = new Importer({
   database: env.DB_NAME,
 });
 
-console.log("");
-
 // New onProgress method, added in version 5.0!
 importer.onProgress((progress) => {
   var percent =
