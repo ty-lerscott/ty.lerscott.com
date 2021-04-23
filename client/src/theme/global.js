@@ -8,4 +8,6 @@ const global = {
   },
 };
 
+console.log("");
+
 export default global;
