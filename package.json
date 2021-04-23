@@ -11,6 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "db:dump": "node scripts/mysql-dump.js",
+    "db:import": "node scripts/mysql-import.js",
     "db:dump:dev": "npm run db:dump -- --development",
     "db:dump:prod": "npm run db:dump -- --production"
   },
