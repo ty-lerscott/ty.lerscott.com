@@ -31,3 +31,5 @@ jobs:
           if_key_exists: replace
       - name: Uploading Wordpress to Beacon Hills
         run: rsync -r ./wordpress ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WP_PATH }}
+      - name: Uploading root package.json to Beacon Hills
+        run: rsync -r ./package*.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DIR_PATH }}
