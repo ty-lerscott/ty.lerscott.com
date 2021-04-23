@@ -3,10 +3,6 @@ name: scripts
 on:
   push:
     branches: [main]
-    paths:
-      - scripts/**
-      - ./package.json
-      - ./package-lock.json
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,5 +28,7 @@ jobs:
           if_key_exists: replace
       - name: Uploading scripts to Beacon Hills
         run: rsync -r ./scripts ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DIR_PATH }}
+      - name: Uploading mysql to Beacon Hills
+        run: rsync -r ./mysql ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DIR_PATH }}
       - name: Uploading root package.json to Beacon Hills
         run: rsync -r ./package*.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DIR_PATH }}
