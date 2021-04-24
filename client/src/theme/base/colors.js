@@ -82,7 +82,7 @@ const fadedRainbow = createTheme({
 });
 
 const colors = {
-  theme: fadedRainbow,
+  theme: forrest,
   forrest,
   mariana,
   fadedRainbow,
