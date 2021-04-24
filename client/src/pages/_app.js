@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useRef } from "react";
 import { Hydrate } from "react-query/hydration";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -29,11 +30,13 @@ const MyApp = ({ Component, pageProps }) => {
     queryClientRef.current = new QueryClient();
   }
 
+  console.log({ pageProps });
+
   return (
     <QueryClientProvider client={queryClientRef.current}>
       <Hydrate state={pageProps.dehydratedState}>
         <ChakraProvider theme={theme}>
-          <Container>
+          <Container fullContainerHeight={pageProps.fullContainerHeight}>
             <Component {...pageProps} />
           </Container>
         </ChakraProvider>
@@ -41,6 +44,13 @@ const MyApp = ({ Component, pageProps }) => {
       </Hydrate>
     </QueryClientProvider>
   );
+};
+
+MyApp.propTypes = {
+  pageProps: PropTypes.shape({
+    /** A Flag to extend the default height of the container */
+    fullContainerHeight: PropTypes.bool,
+  }),
 };
 
 export default MyApp;
