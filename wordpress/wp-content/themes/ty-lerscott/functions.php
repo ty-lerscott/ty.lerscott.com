@@ -152,6 +152,17 @@ function ty_lerscott_scripts() {
 add_action( 'wp_enqueue_scripts', 'ty_lerscott_scripts' );
 
 /**
+ * Adds additional settings to site
+ */
+require get_template_directory() . '/additional-settings.php';
+
+/**
+ * Adds Graphql queries
+ */
+require get_template_directory() . '/graphql/get-config.php';
+
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

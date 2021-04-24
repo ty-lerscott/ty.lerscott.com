@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`),
   KEY `autoload` (`autoload`)
-) ENGINE = InnoDB AUTO_INCREMENT = 296 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 307 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: wp_postmeta
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE = InnoDB AUTO_INCREMENT = 106 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 107 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: wp_posts
@@ -667,7 +667,7 @@ VALUES
   (
     39,
     'recently_edited',
-    'a:2:{i:0;s:107:\"/Users/tyler.williams/Documents/workspace/ty.lerscott.com/wordpress/wp-content/themes/ty-lerscott/style.css\";i:1;s:0:\"\";}',
+    'a:2:{i:0;s:107:\"/Users/tyler.williams/Documents/workspace/ty.lerscott.com/wordpress/wp-content/themes/ty-lerscott/style.css\";i:2;s:0:\"\";}',
     'no'
   );
 INSERT INTO
@@ -1339,7 +1339,7 @@ VALUES
   (
     107,
     'cron',
-    'a:6:{i:1619213933;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1619228333;a:4:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619228345;a:3:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1619228431;a:1:{s:18:\"wp_https_detection\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619487533;a:1:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}',
+    'a:5:{i:1619228333;a:5:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1619228345;a:3:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1619228431;a:1:{s:18:\"wp_https_detection\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619487533;a:1:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}',
     'yes'
   );
 INSERT INTO
@@ -1650,7 +1650,7 @@ VALUES
   (
     162,
     '_site_transient_update_themes',
-    'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1619212143;s:7:\"checked\";a:1:{s:11:\"ty-lerscott\";s:5:\"1.0.0\";}s:8:\"response\";a:0:{}s:9:\"no_update\";a:0:{}s:12:\"translations\";a:0:{}}',
+    'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1619219537;s:7:\"checked\";a:1:{s:11:\"ty-lerscott\";s:5:\"1.0.0\";}s:8:\"response\";a:0:{}s:9:\"no_update\";a:0:{}s:12:\"translations\";a:0:{}}',
     'no'
   );
 INSERT INTO
@@ -1927,9 +1927,9 @@ INSERT INTO
   )
 VALUES
   (
-    294,
+    298,
     '_site_transient_timeout_theme_roots',
-    '1619213943',
+    '1619221337',
     'no'
   );
 INSERT INTO
@@ -1941,10 +1941,24 @@ INSERT INTO
   )
 VALUES
   (
-    295,
+    299,
     '_site_transient_theme_roots',
     'a:1:{s:11:\"ty-lerscott\";s:7:\"/themes\";}',
     'no'
+  );
+INSERT INTO
+  `wp_options` (
+    `option_id`,
+    `option_name`,
+    `option_value`,
+    `autoload`
+  )
+VALUES
+  (
+    300,
+    'global_configurations_option_name',
+    'a:5:{s:12:\"first_name_0\";s:5:\"Tyler\";s:11:\"last_name_1\";s:5:\"Scott\";s:11:\"job_title_2\";s:26:\"Frontend Software Engineer\";s:17:\"sample_textarea_3\";s:0:\"\";s:15:\"sample_select_4\";s:10:\"option-one\";}',
+    'yes'
   );
 
 # ------------------------------------------------------------
@@ -2250,24 +2264,6 @@ VALUES
 INSERT INTO
   `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
 VALUES
-  (
-    96,
-    21,
-    '_wp_attachment_custom_header_last_used_ty-lerscott',
-    '1619135134'
-  );
-INSERT INTO
-  `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
-VALUES
-  (
-    97,
-    21,
-    '_wp_attachment_is_custom_header',
-    'ty-lerscott'
-  );
-INSERT INTO
-  `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
-VALUES
   (98, 22, '_wp_trash_meta_status', 'publish');
 INSERT INTO
   `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
@@ -2297,6 +2293,10 @@ INSERT INTO
   `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
 VALUES
   (105, 18, '_wp_old_date', '2021-04-22');
+INSERT INTO
+  `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
+VALUES
+  (106, 21, '_edit_lock', '1619215868:1');
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: wp_posts
@@ -3380,15 +3380,15 @@ VALUES
 INSERT INTO
   `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES
-  (2, 1, 'first_name', '');
+  (2, 1, 'first_name', 'Tyler');
 INSERT INTO
   `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES
-  (3, 1, 'last_name', '');
+  (3, 1, 'last_name', 'Scott');
 INSERT INTO
   `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES
-  (4, 1, 'description', '');
+  (4, 1, 'description', 'Frontend Software Engineer');
 INSERT INTO
   `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES
@@ -3450,7 +3450,7 @@ VALUES
     16,
     1,
     'session_tokens',
-    'a:2:{s:64:\"6fa7128f96cfcf79456eee3344bbe9d72c06bdd79f0e777ba9d96c099a001994\";a:4:{s:10:\"expiration\";i:1620005945;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1618796345;}s:64:\"85be9cbd88962021abecdaf850f683ea930af1c41018d520e48dcbfcde46929d\";a:4:{s:10:\"expiration\";i:1619376210;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619203410;}}'
+    'a:4:{s:64:\"6fa7128f96cfcf79456eee3344bbe9d72c06bdd79f0e777ba9d96c099a001994\";a:4:{s:10:\"expiration\";i:1620005945;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1618796345;}s:64:\"85be9cbd88962021abecdaf850f683ea930af1c41018d520e48dcbfcde46929d\";a:4:{s:10:\"expiration\";i:1619376210;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619203410;}s:64:\"15f3834bfc9009b1b89239178ad6d6450cd8a34593c26ea554a1144e60444788\";a:4:{s:10:\"expiration\";i:1620425566;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619215966;}s:64:\"a674ba0d288c4f423612fec7141a27c9f624e12cf3419aa3c1bd5a668bc5494d\";a:4:{s:10:\"expiration\";i:1619392346;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619219546;}}'
   );
 INSERT INTO
   `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)

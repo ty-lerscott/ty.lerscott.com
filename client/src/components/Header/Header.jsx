@@ -1,13 +1,27 @@
 import React from "react";
-import { Box, useTheme } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 
+import NameAndJob from "./NameAndJob";
 import Navigation from "./Navigation";
+import ProfileImage from "./ProfileImage";
+
+const gridTemplateColumnStyles = {
+  base: "auto 1fr auto",
+};
 
 const Header = () => {
   return (
-    <Box>
-      <Navigation />
-    </Box>
+    <Grid templateColumns={gridTemplateColumnStyles} gap={12}>
+      <GridItem>
+        <ProfileImage />
+      </GridItem>
+      <GridItem>
+        <NameAndJob />
+      </GridItem>
+      <GridItem>
+        <Navigation />
+      </GridItem>
+    </Grid>
   );
 };
 

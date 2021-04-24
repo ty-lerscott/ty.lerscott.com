@@ -3,10 +3,12 @@ const createTheme = ({
   background,
   outlineColor,
   linkHoverColor,
+  secondaryTextColor,
 }) => ({
   textColor,
   outlineColor,
   linkHoverColor,
+  secondaryTextColor,
   bgColor: background,
 });
 
@@ -60,6 +62,7 @@ const forrest = createTheme({
   background: green["999"],
   outlineColor: brown["30"],
   linkHoverColor: brown["30"],
+  secondaryTextColor: green["200"],
 });
 
 const mariana = createTheme({
@@ -67,6 +70,7 @@ const mariana = createTheme({
   background: blue["999"],
   outlineColor: sunset["30"],
   linkHoverColor: sunset["30"],
+  secondaryTextColor: sunset["30"],
 });
 
 const fadedRainbow = createTheme({
@@ -74,10 +78,11 @@ const fadedRainbow = createTheme({
   background: gray["100"],
   outlineColor: rainbow.g,
   linkHoverColor: rainbow.g,
+  secondaryTextColor: gray["50"],
 });
 
 const colors = {
-  theme: forrest,
+  theme: fadedRainbow,
   forrest,
   mariana,
   fadedRainbow,

@@ -4,6 +4,8 @@ export const fonts = {
 };
 
 export const fontSizes = {
+  "7xl": "5rem", // 80px
+  "6xl": "4rem", // 64px
   "5xl": "3rem", // 48px
   "4xl": "2.75rem", // 44px
   "3xl": "2.5rem", // 40px
