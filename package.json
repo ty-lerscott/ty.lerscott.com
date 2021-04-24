@@ -4,6 +4,8 @@
   "description": "So I had the idea to have my name as my domain, but when I went the look for tylerscott.com it wasnt available at the time and when I thought about it, I realized that my name is important, but the punctuation wasnt. So then I started thinking about domains that were subsets of my first and middle name and here we are.",
   "main": "index.js",
   "dependencies": {
+    "clone": "^2.1.2",
+    "date-fns": "^2.21.1",
     "dotenv": "^8.2.0",
     "mysqldump": "^3.2.0"
   },

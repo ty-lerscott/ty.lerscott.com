@@ -30,8 +30,6 @@ const MyApp = ({ Component, pageProps }) => {
     queryClientRef.current = new QueryClient();
   }
 
-  console.log({ pageProps });
-
   return (
     <QueryClientProvider client={queryClientRef.current}>
       <Hydrate state={pageProps.dehydratedState}>

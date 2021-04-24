@@ -1,5 +1,3 @@
-import { useQuery } from "react-query";
-
 import { request, gql } from "graphql-request";
 
 export const getMainMenu = async () => {
@@ -26,10 +24,3 @@ export const getMainMenu = async () => {
     console.log(err);
   }
 };
-
-export const useGetMainMenu = () =>
-  useQuery("main-menu", async () => {
-    const menu = await getMainMenu();
-
-    return menu;
-  });

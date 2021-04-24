@@ -13,9 +13,9 @@ const Custom404Page = () => {
         404
       </Heading>
       <Box
+        m={4}
         w="1px"
         h="1.25rem"
-        m={4}
         bgColor={primary200}
         borderRightWidth="1px"
         borderRightColor="white"
