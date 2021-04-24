@@ -1,10 +1,14 @@
 const createTheme = ({
+  primary,
+  secondary,
   textColor,
   background,
   outlineColor,
   linkHoverColor,
   secondaryTextColor,
 }) => ({
+  primary,
+  secondary,
   textColor,
   outlineColor,
   linkHoverColor,
@@ -37,11 +41,12 @@ const sunset = {
 };
 
 const rainbow = {
-  r: "#ff595e",
-  y: "#ffca3a",
-  g: "#8ac926",
-  b: "#1982c4",
-  p: "#6a4c93",
+  100: "#ff595e",
+  200: "#ff9859",
+  300: "#ffe959",
+  400: "#8ac926",
+  500: "#1982c4",
+  999: "#9859ff",
 };
 
 const gray = {
@@ -58,6 +63,8 @@ const brown = {
 };
 
 const forrest = createTheme({
+  primary: green,
+  secondary: brown,
   textColor: green["100"],
   background: green["999"],
   outlineColor: brown["30"],
@@ -66,6 +73,8 @@ const forrest = createTheme({
 });
 
 const mariana = createTheme({
+  primary: blue,
+  secondary: sunset,
   textColor: blue["100"],
   background: blue["999"],
   outlineColor: sunset["30"],
@@ -74,10 +83,12 @@ const mariana = createTheme({
 });
 
 const fadedRainbow = createTheme({
+  primary: rainbow,
+  secondary: gray,
   textColor: gray["25"],
   background: gray["100"],
-  outlineColor: rainbow.g,
-  linkHoverColor: rainbow.g,
+  outlineColor: rainbow["400"],
+  linkHoverColor: rainbow["400"],
   secondaryTextColor: gray["50"],
 });
 
