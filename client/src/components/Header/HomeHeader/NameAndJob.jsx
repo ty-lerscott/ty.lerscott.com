@@ -10,7 +10,7 @@ const headingStyles = (theme) => ({
     base: "5xl",
   },
   lineHeight: 1,
-  letterSpacing: 6,
+  letterSpacing: 12,
   fontWeight: "bold",
   textShadow: `
   0.1rem 0.1rem ${theme.primary["200"]},
@@ -34,7 +34,7 @@ const NameAndJob = () => {
       <Heading {...headingStyles(colors.theme)} data-name={name}>
         {name}
       </Heading>
-      <Heading mt={2} as="h2" fontSize="lg" color="theme.secondaryTextColor">
+      <Heading mt={4} as="h2" fontSize="lg" color="theme.secondaryTextColor">
         {jobTitle}
       </Heading>
     </Box>

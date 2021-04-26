@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, GridItem } from "@chakra-ui/react";
 
 import NameAndJob from "./NameAndJob";
-import Navigation from "./Navigation";
+import Navigation from "../Navigation";
 import ProfileImage from "./ProfileImage";
 
 const gridTemplateColumnStyles = {
@@ -15,7 +15,7 @@ const profileGridItemStyles = {
   lg: "block",
 };
 
-const Header = () => {
+const HomeHeader = () => {
   return (
     <Grid templateColumns={gridTemplateColumnStyles} gap={12}>
       <GridItem display={profileGridItemStyles}>
@@ -31,4 +31,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;

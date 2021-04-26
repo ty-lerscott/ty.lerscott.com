@@ -34,7 +34,10 @@ const MyApp = ({ Component, pageProps }) => {
     <QueryClientProvider client={queryClientRef.current}>
       <Hydrate state={pageProps.dehydratedState}>
         <ChakraProvider theme={theme}>
-          <Container fullContainerHeight={pageProps.fullContainerHeight}>
+          <Container
+            layout={pageProps.layout}
+            fullContainerHeight={pageProps.fullContainerHeight}
+          >
             <Component {...pageProps} />
           </Container>
         </ChakraProvider>

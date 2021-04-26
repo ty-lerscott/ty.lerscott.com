@@ -1,7 +1,7 @@
 import React from "react";
-import Link from "next/link";
-import PropTypes from "prop-types";
-import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
+import { GridItem, Flex, Text } from "@chakra-ui/react";
+
+import Link from "components/NextChakraLink";
 
 import { categories } from "constants/index";
 
@@ -16,6 +16,7 @@ const postGridItemStyles = {
 const linkStyles = {
   mt: 10,
   mb: 14,
+  textAlign: "center",
   justify: "center",
   alignItems: "center",
   _hover: {
@@ -46,10 +47,8 @@ const PostGridItem = (post) => {
         {date}
       </Text>
       <Flex {...linkStyles}>
-        <Link href={`/blog/${slug}`}>
-          <Box as="a" textAlign="center" cursor="pointer">
-            {title}
-          </Box>
+        <Link as={`/blog/${slug}`} href="/blog/[slug]">
+          {title}
         </Link>
       </Flex>
     </GridItem>
