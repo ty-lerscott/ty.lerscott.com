@@ -18,6 +18,9 @@ build
 # misc
 .DS_Store
 *.pem
+# only ignoring because usage of dotenv local
+mysql-import.sh
+mysql-truncate.sh
 
 # debug
 npm-debug.log*
