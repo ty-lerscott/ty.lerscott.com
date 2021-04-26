@@ -3,10 +3,10 @@ import { dehydrate } from "react-query/hydration";
 import { Grid, GridItem, Box } from "@chakra-ui/react";
 import { QueryClient, useQueryClient } from "react-query";
 
-import { BlogHeader } from "./components";
 import { getMainMenu } from "api/menu/get-menu";
 import { GenericHeader } from "components/Header";
 import { getBlogPostBySlug } from "api/posts/get-posts";
+import BlogPostHeader from "components/BlogPostHeader/BlogPostHeader";
 
 const getPost = (slug) => () => getBlogPostBySlug(slug);
 
@@ -24,7 +24,7 @@ const BlogPost = ({ slug, dehydratedState }) => {
       </Head>
       <Grid gridTemplateColumns="1fr auto" gap={12}>
         <GridItem>
-          <BlogHeader title={title} {...headerProps} />
+          <BlogPostHeader title={title} {...headerProps} />
           <Box
             className="wp-content"
             dangerouslySetInnerHTML={createMarkup(content)}
