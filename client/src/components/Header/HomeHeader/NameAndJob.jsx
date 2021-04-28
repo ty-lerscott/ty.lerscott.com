@@ -12,11 +12,12 @@ const headingStyles = (theme) => ({
   lineHeight: 1,
   letterSpacing: 12,
   fontWeight: "bold",
+  color: theme.headerColors[0],
   textShadow: `
-  0.1rem 0.1rem ${theme.primary["200"]},
-  0.2rem 0.2rem ${theme.primary["300"]},
-  0.3rem 0.3rem ${theme.primary["400"]},
-  0.4rem 0.4rem ${theme.primary["500"]},
+  0.1rem 0.1rem ${theme.headerColors[1]},
+  0.2rem 0.2rem ${theme.headerColors[2]},
+  0.3rem 0.3rem ${theme.headerColors[3]},
+  0.4rem 0.4rem ${theme.headerColors[4]},
   0.65rem 0.65rem 0.2rem rgba(0,0,0, 0.25);
   `,
 });

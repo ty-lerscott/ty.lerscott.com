@@ -1,22 +1,26 @@
-const createTheme = ({
-  primary,
-  secondary,
-  textColor,
-  background,
-  outlineColor,
-  linkHoverColor,
-  headerTextColor,
-  secondaryTextColor,
-}) => ({
-  primary,
-  secondary,
-  textColor,
-  outlineColor,
-  linkHoverColor,
-  headerTextColor,
-  secondaryTextColor,
+const createTheme = ({ background, ...styles }) => ({
+  ...styles,
   bgColor: background,
 });
+
+const sunset = {
+  30: "#ffb703",
+  60: "#fb8500",
+  90: "#ff5d05",
+};
+
+const gray = {
+  30: "#e5f3ff",
+  60: "#adc5d9",
+  90: "#62798c",
+  99: "#2c363f",
+};
+
+const brown = {
+  30: "#dda15e",
+  60: "#bc6c25",
+  90: "#7d4413",
+};
 
 const green = {
   100: "#e0d6c6",
@@ -36,19 +40,6 @@ const blue = {
   999: "#0a1128",
 };
 
-const sunset = {
-  30: "#ffb703",
-  60: "#fb8500",
-  90: "#ff5d05",
-};
-
-const gray = {
-  30: "#e5f3ff",
-  60: "#adc5d9",
-  90: "#62798c",
-  99: "#2c363f",
-};
-
 const rainbow = {
   100: "#ff595e",
   200: "#ff9859",
@@ -57,12 +48,6 @@ const rainbow = {
   500: "#1982c4",
   // 500: "#9859ff",
   999: gray["99"],
-};
-
-const brown = {
-  30: "#dda15e",
-  60: "#bc6c25",
-  90: "#7d4413",
 };
 
 const forrest = createTheme({
@@ -74,6 +59,9 @@ const forrest = createTheme({
   linkHoverColor: brown["30"],
   headerTextColor: brown["30"],
   secondaryTextColor: green["300"],
+  secondaryHeaderTextColor: brown["60"],
+  tertiaryHeaderTextColor: brown["90"],
+  headerColors: [green["200"], green["300"], green["400"], green["400"]],
 });
 
 const mariana = createTheme({
@@ -85,6 +73,9 @@ const mariana = createTheme({
   linkHoverColor: sunset["30"],
   headerTextColor: sunset["30"],
   secondaryTextColor: sunset["30"],
+  secondaryHeaderTextColor: sunset["60"],
+  tertiaryHeaderTextColor: sunset["90"],
+  headerColors: [green["100"], green["200"], green["200"], green["200"]],
 });
 
 const fadedRainbow = createTheme({
@@ -95,7 +86,10 @@ const fadedRainbow = createTheme({
   outlineColor: rainbow["400"],
   linkHoverColor: rainbow["400"],
   secondaryTextColor: gray["60"],
-  headerTextColor: rainbow["400"],
+  headerTextColor: rainbow["100"],
+  secondaryHeaderTextColor: rainbow["200"],
+  tertiaryHeaderTextColor: rainbow["300"],
+  headerColors: [green["200"], green["200"], green["200"], green["200"]],
 });
 
 const colors = {
