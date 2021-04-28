@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`),
   KEY `autoload` (`autoload`)
-) ENGINE = InnoDB AUTO_INCREMENT = 371 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 401 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: wp_postmeta
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE = InnoDB AUTO_INCREMENT = 150 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 155 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: wp_posts
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `type_status_date` (`post_type`, `post_status`, `post_date`, `ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE = InnoDB AUTO_INCREMENT = 40 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 45 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: wp_term_relationships
@@ -1339,7 +1339,7 @@ VALUES
   (
     107,
     'cron',
-    'a:6:{i:1619408333;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1619444333;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619444431;a:1:{s:18:\"wp_https_detection\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619487533;a:2:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1619487545;a:3:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}',
+    'a:7:{i:1619574031;a:1:{s:18:\"wp_https_detection\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619577533;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1619617133;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619660333;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1619660345;a:3:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1620092333;a:1:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}',
     'yes'
   );
 INSERT INTO
@@ -1520,7 +1520,7 @@ VALUES
   (
     150,
     '_site_transient_update_core',
-    'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.7.1.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.7.1.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.7.1-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.7.1-new-bundled.zip\";s:7:\"partial\";s:0:\"\";s:8:\"rollback\";s:0:\"\";}s:7:\"current\";s:5:\"5.7.1\";s:7:\"version\";s:5:\"5.7.1\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.6\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1619402083;s:15:\"version_checked\";s:5:\"5.7.1\";s:12:\"translations\";a:0:{}}',
+    'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.7.1.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.7.1.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.7.1-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.7.1-new-bundled.zip\";s:7:\"partial\";s:0:\"\";s:8:\"rollback\";s:0:\"\";}s:7:\"current\";s:5:\"5.7.1\";s:7:\"version\";s:5:\"5.7.1\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.6\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1619574027;s:15:\"version_checked\";s:5:\"5.7.1\";s:12:\"translations\";a:0:{}}',
     'no'
   );
 INSERT INTO
@@ -1589,7 +1589,7 @@ VALUES
   (
     162,
     '_site_transient_update_themes',
-    'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1619402084;s:7:\"checked\";a:1:{s:11:\"ty-lerscott\";s:5:\"1.0.0\";}s:8:\"response\";a:0:{}s:9:\"no_update\";a:0:{}s:12:\"translations\";a:0:{}}',
+    'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1619573697;s:7:\"checked\";a:1:{s:11:\"ty-lerscott\";s:5:\"1.0.0\";}s:8:\"response\";a:0:{}s:9:\"no_update\";a:0:{}s:12:\"translations\";a:0:{}}',
     'no'
   );
 INSERT INTO
@@ -1617,7 +1617,7 @@ VALUES
   (
     205,
     '_site_transient_update_plugins',
-    'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1619402084;s:7:\"checked\";a:5:{s:32:\"Basic-Auth-master/basic-auth.php\";s:3:\"0.1\";s:27:\"wp-crontrol/wp-crontrol.php\";s:6:\"1.10.0\";s:25:\"wp-graphql/wp-graphql.php\";s:5:\"1.3.5\";s:72:\"wp-graphql-custom-post-type-ui-master/wp-graphql-custom-post-type-ui.php\";s:3:\"1.1\";s:71:\"wp-graphql-jwt-authentication-develop/wp-graphql-jwt-authentication.php\";s:5:\"0.4.0\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:2:{s:27:\"wp-crontrol/wp-crontrol.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/wp-crontrol\";s:4:\"slug\";s:11:\"wp-crontrol\";s:6:\"plugin\";s:27:\"wp-crontrol/wp-crontrol.php\";s:11:\"new_version\";s:6:\"1.10.0\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/wp-crontrol/\";s:7:\"package\";s:61:\"https://downloads.wordpress.org/plugin/wp-crontrol.1.10.0.zip\";s:5:\"icons\";a:3:{s:2:\"2x\";s:64:\"https://ps.w.org/wp-crontrol/assets/icon-256x256.png?rev=2455895\";s:2:\"1x\";s:56:\"https://ps.w.org/wp-crontrol/assets/icon.svg?rev=2455895\";s:3:\"svg\";s:56:\"https://ps.w.org/wp-crontrol/assets/icon.svg?rev=2455895\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:67:\"https://ps.w.org/wp-crontrol/assets/banner-1544x500.jpg?rev=2455905\";s:2:\"1x\";s:66:\"https://ps.w.org/wp-crontrol/assets/banner-772x250.jpg?rev=2455905\";}s:11:\"banners_rtl\";a:0:{}}s:25:\"wp-graphql/wp-graphql.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:24:\"w.org/plugins/wp-graphql\";s:4:\"slug\";s:10:\"wp-graphql\";s:6:\"plugin\";s:25:\"wp-graphql/wp-graphql.php\";s:11:\"new_version\";s:5:\"1.3.5\";s:3:\"url\";s:41:\"https://wordpress.org/plugins/wp-graphql/\";s:7:\"package\";s:59:\"https://downloads.wordpress.org/plugin/wp-graphql.1.3.5.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:63:\"https://ps.w.org/wp-graphql/assets/icon-256x256.png?rev=2482884\";s:2:\"1x\";s:63:\"https://ps.w.org/wp-graphql/assets/icon-128x128.png?rev=2482884\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:66:\"https://ps.w.org/wp-graphql/assets/banner-1544x500.png?rev=2482884\";s:2:\"1x\";s:65:\"https://ps.w.org/wp-graphql/assets/banner-772x250.png?rev=2482884\";}s:11:\"banners_rtl\";a:0:{}}}}',
+    'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1619573697;s:7:\"checked\";a:5:{s:32:\"Basic-Auth-master/basic-auth.php\";s:3:\"0.1\";s:27:\"wp-crontrol/wp-crontrol.php\";s:6:\"1.10.0\";s:25:\"wp-graphql/wp-graphql.php\";s:5:\"1.3.5\";s:72:\"wp-graphql-custom-post-type-ui-master/wp-graphql-custom-post-type-ui.php\";s:3:\"1.1\";s:71:\"wp-graphql-jwt-authentication-develop/wp-graphql-jwt-authentication.php\";s:5:\"0.4.0\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:2:{s:27:\"wp-crontrol/wp-crontrol.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/wp-crontrol\";s:4:\"slug\";s:11:\"wp-crontrol\";s:6:\"plugin\";s:27:\"wp-crontrol/wp-crontrol.php\";s:11:\"new_version\";s:6:\"1.10.0\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/wp-crontrol/\";s:7:\"package\";s:61:\"https://downloads.wordpress.org/plugin/wp-crontrol.1.10.0.zip\";s:5:\"icons\";a:3:{s:2:\"2x\";s:64:\"https://ps.w.org/wp-crontrol/assets/icon-256x256.png?rev=2455895\";s:2:\"1x\";s:56:\"https://ps.w.org/wp-crontrol/assets/icon.svg?rev=2455895\";s:3:\"svg\";s:56:\"https://ps.w.org/wp-crontrol/assets/icon.svg?rev=2455895\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:67:\"https://ps.w.org/wp-crontrol/assets/banner-1544x500.jpg?rev=2455905\";s:2:\"1x\";s:66:\"https://ps.w.org/wp-crontrol/assets/banner-772x250.jpg?rev=2455905\";}s:11:\"banners_rtl\";a:0:{}}s:25:\"wp-graphql/wp-graphql.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:24:\"w.org/plugins/wp-graphql\";s:4:\"slug\";s:10:\"wp-graphql\";s:6:\"plugin\";s:25:\"wp-graphql/wp-graphql.php\";s:11:\"new_version\";s:5:\"1.3.5\";s:3:\"url\";s:41:\"https://wordpress.org/plugins/wp-graphql/\";s:7:\"package\";s:59:\"https://downloads.wordpress.org/plugin/wp-graphql.1.3.5.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:63:\"https://ps.w.org/wp-graphql/assets/icon-256x256.png?rev=2482884\";s:2:\"1x\";s:63:\"https://ps.w.org/wp-graphql/assets/icon-128x128.png?rev=2482884\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:66:\"https://ps.w.org/wp-graphql/assets/banner-1544x500.png?rev=2482884\";s:2:\"1x\";s:65:\"https://ps.w.org/wp-graphql/assets/banner-772x250.png?rev=2482884\";}s:11:\"banners_rtl\";a:0:{}}}}',
     'no'
   );
 INSERT INTO
@@ -1712,9 +1712,9 @@ INSERT INTO
   )
 VALUES
   (
-    366,
-    '_site_transient_timeout_theme_roots',
-    '1619405945',
+    375,
+    '_site_transient_timeout_php_check_75809dde56e3fe2c2fb740f1b55807ac',
+    '1620095799',
     'no'
   );
 INSERT INTO
@@ -1726,7 +1726,63 @@ INSERT INTO
   )
 VALUES
   (
-    367,
+    376,
+    '_site_transient_php_check_75809dde56e3fe2c2fb740f1b55807ac',
+    'a:5:{s:19:\"recommended_version\";s:3:\"7.4\";s:15:\"minimum_version\";s:6:\"5.6.20\";s:12:\"is_supported\";b:1;s:9:\"is_secure\";b:1;s:13:\"is_acceptable\";b:1;}',
+    'no'
+  );
+INSERT INTO
+  `wp_options` (
+    `option_id`,
+    `option_name`,
+    `option_value`,
+    `autoload`
+  )
+VALUES
+  (
+    377,
+    '_site_transient_timeout_browser_291da66cbb2b7ebec14fe3e09324e087',
+    '1620095801',
+    'no'
+  );
+INSERT INTO
+  `wp_options` (
+    `option_id`,
+    `option_name`,
+    `option_value`,
+    `autoload`
+  )
+VALUES
+  (
+    378,
+    '_site_transient_browser_291da66cbb2b7ebec14fe3e09324e087',
+    'a:10:{s:4:\"name\";s:6:\"Chrome\";s:7:\"version\";s:12:\"90.0.4430.85\";s:8:\"platform\";s:9:\"Macintosh\";s:10:\"update_url\";s:29:\"https://www.google.com/chrome\";s:7:\"img_src\";s:43:\"http://s.w.org/images/browsers/chrome.png?1\";s:11:\"img_src_ssl\";s:44:\"https://s.w.org/images/browsers/chrome.png?1\";s:15:\"current_version\";s:2:\"18\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}',
+    'no'
+  );
+INSERT INTO
+  `wp_options` (
+    `option_id`,
+    `option_name`,
+    `option_value`,
+    `autoload`
+  )
+VALUES
+  (
+    396,
+    '_site_transient_timeout_theme_roots',
+    '1619575497',
+    'no'
+  );
+INSERT INTO
+  `wp_options` (
+    `option_id`,
+    `option_name`,
+    `option_value`,
+    `autoload`
+  )
+VALUES
+  (
+    397,
     '_site_transient_theme_roots',
     'a:1:{s:11:\"ty-lerscott\";s:7:\"/themes\";}',
     'no'
@@ -2145,6 +2201,10 @@ INSERT INTO
   `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
 VALUES
   (147, 33, '_edit_last', '1');
+INSERT INTO
+  `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
+VALUES
+  (150, 41, '_edit_lock', '1619491487:1');
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: wp_posts
@@ -2303,58 +2363,6 @@ VALUES
     'http://watercoo.lerscott.local/?page_id=3',
     0,
     'page',
-    '',
-    0
-  );
-INSERT INTO
-  `wp_posts` (
-    `ID`,
-    `post_author`,
-    `post_date`,
-    `post_date_gmt`,
-    `post_content`,
-    `post_title`,
-    `post_excerpt`,
-    `post_status`,
-    `comment_status`,
-    `ping_status`,
-    `post_password`,
-    `post_name`,
-    `to_ping`,
-    `pinged`,
-    `post_modified`,
-    `post_modified_gmt`,
-    `post_content_filtered`,
-    `post_parent`,
-    `guid`,
-    `menu_order`,
-    `post_type`,
-    `post_mime_type`,
-    `comment_count`
-  )
-VALUES
-  (
-    4,
-    1,
-    '2021-04-19 01:39:05',
-    '0000-00-00 00:00:00',
-    '',
-    'Auto Draft',
-    '',
-    'auto-draft',
-    'open',
-    'open',
-    '',
-    '',
-    '',
-    '',
-    '2021-04-19 01:39:05',
-    '0000-00-00 00:00:00',
-    '',
-    0,
-    'http://watercoo.lerscott.local/?p=4',
-    0,
-    'post',
     '',
     0
   );
@@ -3918,6 +3926,266 @@ VALUES
     '',
     0
   );
+INSERT INTO
+  `wp_posts` (
+    `ID`,
+    `post_author`,
+    `post_date`,
+    `post_date_gmt`,
+    `post_content`,
+    `post_title`,
+    `post_excerpt`,
+    `post_status`,
+    `comment_status`,
+    `ping_status`,
+    `post_password`,
+    `post_name`,
+    `to_ping`,
+    `pinged`,
+    `post_modified`,
+    `post_modified_gmt`,
+    `post_content_filtered`,
+    `post_parent`,
+    `guid`,
+    `menu_order`,
+    `post_type`,
+    `post_mime_type`,
+    `comment_count`
+  )
+VALUES
+  (
+    40,
+    1,
+    '2021-04-27 02:36:41',
+    '0000-00-00 00:00:00',
+    '',
+    'Auto Draft',
+    '',
+    'auto-draft',
+    'open',
+    'open',
+    '',
+    '',
+    '',
+    '',
+    '2021-04-27 02:36:41',
+    '0000-00-00 00:00:00',
+    '',
+    0,
+    'http://watercoo.lerscott.local/?p=40',
+    0,
+    'post',
+    '',
+    0
+  );
+INSERT INTO
+  `wp_posts` (
+    `ID`,
+    `post_author`,
+    `post_date`,
+    `post_date_gmt`,
+    `post_content`,
+    `post_title`,
+    `post_excerpt`,
+    `post_status`,
+    `comment_status`,
+    `ping_status`,
+    `post_password`,
+    `post_name`,
+    `to_ping`,
+    `pinged`,
+    `post_modified`,
+    `post_modified_gmt`,
+    `post_content_filtered`,
+    `post_parent`,
+    `guid`,
+    `menu_order`,
+    `post_type`,
+    `post_mime_type`,
+    `comment_count`
+  )
+VALUES
+  (
+    41,
+    1,
+    '2021-04-27 02:37:20',
+    '2021-04-27 02:37:20',
+    '<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>If a file or a component is ever scary to look at, go to the test that describes it, if that doesnt help, burn it.</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Outline</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list {\"ordered\":true} -->\n<ol><li>Being new to an application<ol><li>where I go to learn</li></ol></li><li>If a component is complex: is reading through it enough for me to feel comfortable touching it?<ol><li>If not, is there a test I can read through that will describe what should be going on?</li><li>If not, can I retrofit a test to make sure I understand it?</li></ol></li><li>What if the test itself has high coverage numbers but doesnt make sense?<ol><li>Well then it\'s your job make it make sense and refactor if you can</li></ol></li><li>Coverage doesnt matter if the test doesnt fill you with joy</li><li>Go through example with CW routes.js</li></ol>\n<!-- /wp:list -->',
+    'Demystifying Complexity Through Testing',
+    '',
+    'publish',
+    'open',
+    'open',
+    '',
+    'demystifying-complexity-through-testing',
+    '',
+    '',
+    '2021-04-27 02:44:19',
+    '2021-04-27 02:44:19',
+    '',
+    0,
+    'http://watercoo.lerscott.local/?p=41',
+    0,
+    'post',
+    '',
+    0
+  );
+INSERT INTO
+  `wp_posts` (
+    `ID`,
+    `post_author`,
+    `post_date`,
+    `post_date_gmt`,
+    `post_content`,
+    `post_title`,
+    `post_excerpt`,
+    `post_status`,
+    `comment_status`,
+    `ping_status`,
+    `post_password`,
+    `post_name`,
+    `to_ping`,
+    `pinged`,
+    `post_modified`,
+    `post_modified_gmt`,
+    `post_content_filtered`,
+    `post_parent`,
+    `guid`,
+    `menu_order`,
+    `post_type`,
+    `post_mime_type`,
+    `comment_count`
+  )
+VALUES
+  (
+    42,
+    1,
+    '2021-04-27 02:37:17',
+    '2021-04-27 02:37:17',
+    '',
+    'Demystifying Complexity Through Testing',
+    '',
+    'inherit',
+    'closed',
+    'closed',
+    '',
+    '41-revision-v1',
+    '',
+    '',
+    '2021-04-27 02:37:17',
+    '2021-04-27 02:37:17',
+    '',
+    41,
+    'http://watercoo.lerscott.local/?p=42',
+    0,
+    'revision',
+    '',
+    0
+  );
+INSERT INTO
+  `wp_posts` (
+    `ID`,
+    `post_author`,
+    `post_date`,
+    `post_date_gmt`,
+    `post_content`,
+    `post_title`,
+    `post_excerpt`,
+    `post_status`,
+    `comment_status`,
+    `ping_status`,
+    `post_password`,
+    `post_name`,
+    `to_ping`,
+    `pinged`,
+    `post_modified`,
+    `post_modified_gmt`,
+    `post_content_filtered`,
+    `post_parent`,
+    `guid`,
+    `menu_order`,
+    `post_type`,
+    `post_mime_type`,
+    `comment_count`
+  )
+VALUES
+  (
+    43,
+    1,
+    '2021-04-27 02:43:47',
+    '2021-04-27 02:43:47',
+    '<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>If a file or a component is ever scary to look at, go to the test that describes it, if that doesnt help, burn it.</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Outline</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list {\"ordered\":true} -->\n<ol><li>Being new to an application<ol><li>where I go to learn</li></ol></li><li>If a component is complex: is reading through it enough for me to feel comfortable touching it?<ol><li>If not, is there a test I can read through that will describe what should be going on?</li><li>If not, can I retrofit a test to make sure I understand it?</li></ol></li><li>What if the test itself has high coverage numbers but doesnt make sense?<ol><li>Well then it\'s your job make it make sense and refactor if you can</li></ol></li><li>Coverage doesnt matter if the test doesnt gi</li></ol>\n<!-- /wp:list -->',
+    'Demystifying Complexity Through Testing',
+    '',
+    'inherit',
+    'closed',
+    'closed',
+    '',
+    '41-autosave-v1',
+    '',
+    '',
+    '2021-04-27 02:43:47',
+    '2021-04-27 02:43:47',
+    '',
+    41,
+    'http://watercoo.lerscott.local/?p=43',
+    0,
+    'revision',
+    '',
+    0
+  );
+INSERT INTO
+  `wp_posts` (
+    `ID`,
+    `post_author`,
+    `post_date`,
+    `post_date_gmt`,
+    `post_content`,
+    `post_title`,
+    `post_excerpt`,
+    `post_status`,
+    `comment_status`,
+    `ping_status`,
+    `post_password`,
+    `post_name`,
+    `to_ping`,
+    `pinged`,
+    `post_modified`,
+    `post_modified_gmt`,
+    `post_content_filtered`,
+    `post_parent`,
+    `guid`,
+    `menu_order`,
+    `post_type`,
+    `post_mime_type`,
+    `comment_count`
+  )
+VALUES
+  (
+    44,
+    1,
+    '2021-04-27 02:44:19',
+    '2021-04-27 02:44:19',
+    '<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>If a file or a component is ever scary to look at, go to the test that describes it, if that doesnt help, burn it.</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Outline</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list {\"ordered\":true} -->\n<ol><li>Being new to an application<ol><li>where I go to learn</li></ol></li><li>If a component is complex: is reading through it enough for me to feel comfortable touching it?<ol><li>If not, is there a test I can read through that will describe what should be going on?</li><li>If not, can I retrofit a test to make sure I understand it?</li></ol></li><li>What if the test itself has high coverage numbers but doesnt make sense?<ol><li>Well then it\'s your job make it make sense and refactor if you can</li></ol></li><li>Coverage doesnt matter if the test doesnt fill you with joy</li><li>Go through example with CW routes.js</li></ol>\n<!-- /wp:list -->',
+    'Demystifying Complexity Through Testing',
+    '',
+    'inherit',
+    'closed',
+    'closed',
+    '',
+    '41-revision-v1',
+    '',
+    '',
+    '2021-04-27 02:44:19',
+    '2021-04-27 02:44:19',
+    '',
+    41,
+    'http://watercoo.lerscott.local/?p=44',
+    0,
+    'revision',
+    '',
+    0
+  );
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: wp_term_relationships
@@ -3959,6 +4227,10 @@ INSERT INTO
   `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`)
 VALUES
   (33, 1, 0);
+INSERT INTO
+  `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`)
+VALUES
+  (41, 1, 0);
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: wp_term_taxonomy
@@ -3974,7 +4246,7 @@ INSERT INTO
     `count`
   )
 VALUES
-  (1, 1, 'category', '', 0, 1);
+  (1, 1, 'category', '', 0, 2);
 INSERT INTO
   `wp_term_taxonomy` (
     `term_taxonomy_id`,
@@ -4101,12 +4373,17 @@ VALUES
     16,
     1,
     'session_tokens',
-    'a:6:{s:64:\"6fa7128f96cfcf79456eee3344bbe9d72c06bdd79f0e777ba9d96c099a001994\";a:4:{s:10:\"expiration\";i:1620005945;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1618796345;}s:64:\"85be9cbd88962021abecdaf850f683ea930af1c41018d520e48dcbfcde46929d\";a:4:{s:10:\"expiration\";i:1619376210;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619203410;}s:64:\"15f3834bfc9009b1b89239178ad6d6450cd8a34593c26ea554a1144e60444788\";a:4:{s:10:\"expiration\";i:1620425566;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619215966;}s:64:\"a674ba0d288c4f423612fec7141a27c9f624e12cf3419aa3c1bd5a668bc5494d\";a:4:{s:10:\"expiration\";i:1619392346;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619219546;}s:64:\"aaae6523a565ffb4342a6130556ac57674a3a6463de4f957f0ea43688c935d2e\";a:4:{s:10:\"expiration\";i:1619458520;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619285720;}s:64:\"e8fcfd92425c0c10d0e5b615e0cdc250583b8f15dc9322732499e3f964d1d0d5\";a:4:{s:10:\"expiration\";i:1619472915;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619300115;}}'
+    'a:3:{s:64:\"6fa7128f96cfcf79456eee3344bbe9d72c06bdd79f0e777ba9d96c099a001994\";a:4:{s:10:\"expiration\";i:1620005945;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1618796345;}s:64:\"15f3834bfc9009b1b89239178ad6d6450cd8a34593c26ea554a1144e60444788\";a:4:{s:10:\"expiration\";i:1620425566;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36\";s:5:\"login\";i:1619215966;}s:64:\"066614c40e897f5bd15cb203c93e6f9710b9e72d4a826d19bd67aa7f0a9eeda6\";a:4:{s:10:\"expiration\";i:1619663801;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36\";s:5:\"login\";i:1619491001;}}'
   );
 INSERT INTO
   `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES
-  (17, 1, 'wp_dashboard_quick_press_last_post_id', '4');
+  (
+    17,
+    1,
+    'wp_dashboard_quick_press_last_post_id',
+    '40'
+  );
 INSERT INTO
   `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES
