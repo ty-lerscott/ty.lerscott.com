@@ -9,13 +9,13 @@
     "dotenv": "^8.2.0",
     "mysqldump": "^3.2.0"
   },
-  "devDependencies": {},
   "scripts": {
     "db:dump": "node scripts/mysql-dump.js",
     "predb:import": "sh scripts/mysql-truncate.sh",
     "db:import": "sh scripts/mysql-import.sh",
     "db:dump:dev": "npm run db:dump -- --development",
-    "db:dump:prod": "npm run db:dump -- --production"
+    "db:dump:prod": "npm run db:dump -- --production",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/ty-lerscott/ty.lerscott.com/issues"
   },
-  "homepage": "https://github.com/ty-lerscott/ty.lerscott.com#readme"
+  "homepage": "https://github.com/ty-lerscott/ty.lerscott.com#readme",
+  "devDependencies": {
+    "husky": "^6.0.0"
+  }
 }
