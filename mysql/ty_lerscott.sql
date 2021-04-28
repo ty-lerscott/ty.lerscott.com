@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`),
   KEY `autoload` (`autoload`)
-) ENGINE = InnoDB AUTO_INCREMENT = 418 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 419 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: wp_postmeta
@@ -1339,7 +1339,7 @@ VALUES
   (
     107,
     'cron',
-    'a:8:{i:1619575649;a:1:{s:8:\"do_pings\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:2:{s:8:\"schedule\";b:0;s:4:\"args\";a:0:{}}}}i:1619577533;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1619617133;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619617231;a:1:{s:18:\"wp_https_detection\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619660333;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1619660345;a:3:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1620092333;a:1:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}',
+    'a:7:{i:1619577533;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1619617133;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619617231;a:1:{s:18:\"wp_https_detection\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1619660333;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1619660345;a:3:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1620092333;a:1:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}',
     'yes'
   );
 INSERT INTO
@@ -2400,15 +2400,7 @@ VALUES
 INSERT INTO
   `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
 VALUES
-  (150, 41, '_edit_lock', '1619575644:1');
-INSERT INTO
-  `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
-VALUES
-  (155, 41, '_pingme', '1');
-INSERT INTO
-  `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
-VALUES
-  (156, 41, '_encloseme', '1');
+  (150, 41, '_edit_lock', '1619576190:1');
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: wp_posts
@@ -4217,15 +4209,15 @@ VALUES
     '<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>If a file or a component is ever scary to look at, go to the test that describes it, if that doesnt help, burn it.</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Outline</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list {\"ordered\":true} -->\n<ol><li>Being new to an application<ol><li>where I go to learn</li></ol></li><li>If a component is complex: is reading through it enough for me to feel comfortable touching it?<ol><li>If not, is there a test I can read through that will describe what should be going on?</li><li>If not, can I retrofit a test to make sure I understand it?</li></ol></li><li>What if the test itself has high coverage numbers but doesnt make sense?<ol><li>Well then it\'s your job make it make sense and refactor if you can</li></ol></li><li>Coverage doesnt matter if the test doesnt fill you with joy</li><li>Go through example with CW routes.js</li></ol>\n<!-- /wp:list -->',
     'Demystifying POOP Complexity Through Testing',
     '',
-    'publish',
+    'draft',
     'open',
     'open',
     '',
     'demystifying-complexity-through-testing',
     '',
     '',
-    '2021-04-28 02:07:29',
-    '2021-04-28 02:07:29',
+    '2021-04-28 02:13:29',
+    '2021-04-28 02:13:29',
     '',
     0,
     'http://watercoo.lerscott.local/?p=41',
@@ -4450,7 +4442,7 @@ INSERT INTO
     `count`
   )
 VALUES
-  (1, 1, 'category', '', 0, 2);
+  (1, 1, 'category', '', 0, 1);
 INSERT INTO
   `wp_term_taxonomy` (
     `term_taxonomy_id`,
