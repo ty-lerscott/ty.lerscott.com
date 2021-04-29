@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`),
   KEY `autoload` (`autoload`)
-) ENGINE = InnoDB AUTO_INCREMENT = 490 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 492 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: wp_postmeta
@@ -1476,7 +1476,12 @@ INSERT INTO
     `autoload`
   )
 VALUES
-  (118, 'recovery_keys', 'a:0:{}', 'yes');
+  (
+    118,
+    'recovery_keys',
+    'a:1:{s:22:\"OfsV8SIB1j6Bas5tjRQJUY\";a:2:{s:10:\"hashed_key\";s:34:\"$P$BJg7dFy/mTk0XHwbuLDSZxVQIt/asl.\";s:10:\"created_at\";i:1619731328;}}',
+    'yes'
+  );
 INSERT INTO
   `wp_options` (
     `option_id`,
@@ -1659,7 +1664,7 @@ VALUES
   (
     260,
     'recovery_mode_email_last_sent',
-    '1619135429',
+    '1619731328',
     'yes'
   );
 INSERT INTO
@@ -1691,7 +1696,7 @@ VALUES
   (
     300,
     'global_configurations_option_name',
-    'a:5:{s:12:\"first_name_0\";s:5:\"Tyler\";s:11:\"last_name_1\";s:5:\"Scott\";s:11:\"job_title_2\";s:26:\"Frontend Software Engineer\";s:17:\"sample_textarea_3\";s:0:\"\";s:15:\"sample_select_4\";s:10:\"option-one\";}',
+    'a:4:{s:12:\"first_name_0\";s:5:\"Tyler\";s:11:\"last_name_1\";s:5:\"Scott\";s:11:\"job_title_2\";s:26:\"Frontend Software Engineer\";s:10:\"location_3\";s:11:\"Chicago, IL\";}',
     'yes'
   );
 INSERT INTO
@@ -2428,7 +2433,7 @@ VALUES
 INSERT INTO
   `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
 VALUES
-  (150, 41, '_edit_lock', '1619728959:1');
+  (150, 41, '_edit_lock', '1619730947:1');
 INSERT INTO
   `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
 VALUES

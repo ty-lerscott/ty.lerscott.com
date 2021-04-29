@@ -80,33 +80,9 @@ class GlobalConfigurations {
 		);
 
 		add_settings_field(
-			'sample_textarea_3', // id
-			'Sample textarea', // title
-			array( $this, 'sample_textarea_3_callback' ), // callback
-			'global-configurations-admin', // page
-			'global_configurations_setting_section' // section
-		);
-
-		add_settings_field(
-			'sample_select_4', // id
-			'Sample select', // title
-			array( $this, 'sample_select_4_callback' ), // callback
-			'global-configurations-admin', // page
-			'global_configurations_setting_section' // section
-		);
-
-		add_settings_field(
-			'sample_checkbox_5', // id
-			'Sample Checkbox', // title
-			array( $this, 'sample_checkbox_5_callback' ), // callback
-			'global-configurations-admin', // page
-			'global_configurations_setting_section' // section
-		);
-
-		add_settings_field(
-			'sample_radio_6', // id
-			'Sample Radio', // title
-			array( $this, 'sample_radio_6_callback' ), // callback
+			'location_3', // id
+			'Location', // title
+			array( $this, 'location_3_callback' ), // callback
 			'global-configurations-admin', // page
 			'global_configurations_setting_section' // section
 		);
@@ -126,20 +102,8 @@ class GlobalConfigurations {
 			$sanitary_values['job_title_2'] = sanitize_text_field( $input['job_title_2'] );
 		}
 
-		if ( isset( $input['sample_textarea_3'] ) ) {
-			$sanitary_values['sample_textarea_3'] = esc_textarea( $input['sample_textarea_3'] );
-		}
-
-		if ( isset( $input['sample_select_4'] ) ) {
-			$sanitary_values['sample_select_4'] = $input['sample_select_4'];
-		}
-
-		if ( isset( $input['sample_checkbox_5'] ) ) {
-			$sanitary_values['sample_checkbox_5'] = $input['sample_checkbox_5'];
-		}
-
-		if ( isset( $input['sample_radio_6'] ) ) {
-			$sanitary_values['sample_radio_6'] = $input['sample_radio_6'];
+		if ( isset( $input['location_3'] ) ) {
+			$sanitary_values['location_3'] = sanitize_text_field( $input['location_3'] );
 		}
 
 		return $sanitary_values;
@@ -170,34 +134,11 @@ class GlobalConfigurations {
 		);
 	}
 
-	public function sample_textarea_3_callback() {
+	public function location_3_callback() {
 		printf(
-			'<textarea class="large-text" rows="5" name="global_configurations_option_name[sample_textarea_3]" id="sample_textarea_3">%s</textarea>',
-			isset( $this->global_configurations_options['sample_textarea_3'] ) ? esc_attr( $this->global_configurations_options['sample_textarea_3']) : ''
+			'<input class="regular-text" type="text" name="global_configurations_option_name[location_3]" id="location_3" value="%s">',
+			isset( $this->global_configurations_options['location_3'] ) ? esc_attr( $this->global_configurations_options['location_3']) : ''
 		);
-	}
-
-	public function sample_select_4_callback() {
-		?> <select name="global_configurations_option_name[sample_select_4]" id="sample_select_4">
-			<?php $selected = (isset( $this->global_configurations_options['sample_select_4'] ) && $this->global_configurations_options['sample_select_4'] === 'option-one') ? 'selected' : '' ; ?>
-			<option value="option-one" <?php echo $selected; ?>>Option One</option>
-			<?php $selected = (isset( $this->global_configurations_options['sample_select_4'] ) && $this->global_configurations_options['sample_select_4'] === 'option-two') ? 'selected' : '' ; ?>
-			<option value="option-two" <?php echo $selected; ?>>Option Two</option>
-		</select> <?php
-	}
-
-	public function sample_checkbox_5_callback() {
-		printf(
-			'<input type="checkbox" name="global_configurations_option_name[sample_checkbox_5]" id="sample_checkbox_5" value="sample_checkbox_5" %s> <label for="sample_checkbox_5">Yes or No?</label>',
-			( isset( $this->global_configurations_options['sample_checkbox_5'] ) && $this->global_configurations_options['sample_checkbox_5'] === 'sample_checkbox_5' ) ? 'checked' : ''
-		);
-	}
-
-	public function sample_radio_6_callback() {
-		?> <fieldset><?php $checked = ( isset( $this->global_configurations_options['sample_radio_6'] ) && $this->global_configurations_options['sample_radio_6'] === 'option-one' ) ? 'checked' : '' ; ?>
-		<label for="sample_radio_6-0"><input type="radio" name="global_configurations_option_name[sample_radio_6]" id="sample_radio_6-0" value="option-one" <?php echo $checked; ?>> Option One</label><br>
-		<?php $checked = ( isset( $this->global_configurations_options['sample_radio_6'] ) && $this->global_configurations_options['sample_radio_6'] === 'option-two' ) ? 'checked' : '' ; ?>
-		<label for="sample_radio_6-1"><input type="radio" name="global_configurations_option_name[sample_radio_6]" id="sample_radio_6-1" value="option-two" <?php echo $checked; ?>> Option Two</label></fieldset> <?php
 	}
 
 }
@@ -210,8 +151,5 @@ if ( is_admin() )
  * $first_name_0 = $global_configurations_options['first_name_0']; // First Name
  * $last_name_1 = $global_configurations_options['last_name_1']; // Last Name
  * $job_title_2 = $global_configurations_options['job_title_2']; // Job Title
- * $sample_textarea_3 = $global_configurations_options['sample_textarea_3']; // Sample textarea
- * $sample_select_4 = $global_configurations_options['sample_select_4']; // Sample select
- * $sample_checkbox_5 = $global_configurations_options['sample_checkbox_5']; // Sample Checkbox
- * $sample_radio_6 = $global_configurations_options['sample_radio_6']; // Sample Radio
+ * $location_3 = $global_configurations_options['location_3']; // Location
  */

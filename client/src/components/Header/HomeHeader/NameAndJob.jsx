@@ -1,10 +1,7 @@
 import React from "react";
 import { useQueryClient } from "react-query";
 import { Heading, Box, useTheme } from "@chakra-ui/react";
-// ,
-//
-//
-//   0.4rem 0.4rem ${theme.headerColors[4]},
+
 const headingStyles = (theme) => ({
   as: "h1",
   fontSize: {
@@ -27,9 +24,12 @@ const headingStyles = (theme) => ({
 
 const NameAndJob = () => {
   const { colors } = useTheme();
-  const { firstName, lastName, jobTitle } = useQueryClient().getQueryData(
-    "configs"
-  );
+  const {
+    firstName,
+    lastName,
+    jobTitle,
+    location,
+  } = useQueryClient().getQueryData("configs");
 
   const name = `${firstName} ${lastName}`;
 
@@ -40,6 +40,9 @@ const NameAndJob = () => {
       </Heading>
       <Heading mt={4} as="h2" fontSize="lg" color="theme.secondaryTextColor">
         {jobTitle}
+      </Heading>
+      <Heading mt={1} as="h3" fontSize="sm" color="theme.secondaryTextColor">
+        {location}
       </Heading>
     </Box>
   );

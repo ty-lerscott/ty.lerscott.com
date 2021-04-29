@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="icon" href="/favicon.svg" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

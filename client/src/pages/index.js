@@ -12,15 +12,14 @@ import getImageBySlug from "api/images/get-image-by-slug";
 
 const getProfileImage = () => getImageBySlug("profile-photo");
 const getEssentialConfigs = () =>
-  getConfig(["firstName", "lastName", "jobTitle"]);
+  getConfig(["firstName", "lastName", "jobTitle", "location"]);
 const getPosts = () => getBlogPosts();
 
 const Home = ({ dehydratedState }) => {
   return (
     <>
       <Head>
-        <title>Tyler Scott | Javascript Software Engineer</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Tyler Scott Williams</title>
       </Head>
       <HomeHeader />
       <Blog mt={8} />

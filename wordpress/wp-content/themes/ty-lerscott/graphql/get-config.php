@@ -12,9 +12,11 @@ function extend_wpgraphql_schema() {
         $first_name = $global_configurations_options['first_name_0']; // First Name
         $last_name = $global_configurations_options['last_name_1']; // Last Name
         $job_title = $global_configurations_options['job_title_2']; // Job Title
+        $location = $global_configurations_options['location_3']; // Job Title
 
         return [
-            'jobTitle' => $job_title,
+          'jobTitle' => $job_title,
+          'location' => $location,
             'lastName' => $last_name,
             'firstName' => $first_name,
         ];
@@ -35,6 +37,10 @@ function extend_wpgraphql_schema() {
       'jobTitle' => [
         'type' => 'String',
         'description' => __( 'My Job', 'ty_lerscott-config' ),
+      ],
+      'location' => [
+        'type' => 'String',
+        'description' => __( 'My Current City', 'ty_lerscott-config' ),
       ],
     ],
   ] );
