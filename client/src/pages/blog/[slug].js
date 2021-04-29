@@ -26,6 +26,7 @@ const BlogPost = ({ slug, dehydratedState }) => {
         <GridItem>
           <BlogPostHeader title={title} {...headerProps} />
           <Box
+            as="main"
             className="wp-content"
             dangerouslySetInnerHTML={createMarkup(content)}
           />

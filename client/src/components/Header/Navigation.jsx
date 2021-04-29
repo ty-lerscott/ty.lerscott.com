@@ -9,7 +9,10 @@ const Navigation = (props) => {
   const { asPath } = useRouter();
   const isActive = (item) => asPath === item.url;
   const isExternal = (item) => item.target === "_blank";
-  const menuItems = useQueryClient().getQueryData("main-menu");
+  // TODO: Add routes back into page when work is complete
+  const menuItems = useQueryClient()
+    .getQueryData("main-menu")
+    .filter((item) => !["Projects", "About", "Resume"].includes(item.label));
 
   return (
     <Box as="nav" {...props}>

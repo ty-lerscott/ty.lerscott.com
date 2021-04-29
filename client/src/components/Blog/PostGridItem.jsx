@@ -46,8 +46,8 @@ const PostGridItem = (post) => {
       <Text fontSize="sm" color="theme.secondaryTextColor">
         {date}
       </Text>
-      <Flex {...linkStyles}>
-        <Link as={`/blog/${slug}`} href="/blog/[slug]">
+      <Flex>
+        <Link as={`/blog/${slug}`} href="/blog/[slug]" {...linkStyles}>
           {title}
         </Link>
       </Flex>

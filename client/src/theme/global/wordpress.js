@@ -1,5 +1,8 @@
 const wordpress = {
   ".wp-content": {
+    ":first-child": {
+      mb: 8,
+    },
     "* + *": {
       mt: 4,
     },
@@ -11,6 +14,12 @@ const wordpress = {
     },
     "h3, h4, h5, h6": {
       color: "theme.tertiaryHeaderTextColor",
+    },
+    figure: {
+      textAlign: "center",
+      a: {
+        display: "inline-block",
+      },
     },
   },
 };

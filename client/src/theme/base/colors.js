@@ -50,6 +50,15 @@ const rainbow = {
   999: gray["99"],
 };
 
+const easterPastels = {
+  100: "#D3F8E2",
+  200: "#E4C1F9",
+  300: "#F694C1",
+  400: "#EDE7B1",
+  500: "#A9DEF9",
+  999: gray["99"],
+};
+
 const forrest = createTheme({
   primary: green,
   secondary: brown,
@@ -61,7 +70,13 @@ const forrest = createTheme({
   secondaryTextColor: green["300"],
   secondaryHeaderTextColor: brown["60"],
   tertiaryHeaderTextColor: brown["90"],
-  headerColors: [green["200"], green["300"], green["400"], green["400"]],
+  headerColors: [
+    green["200"],
+    green["300"],
+    green["400"],
+    green["500"],
+    "black",
+  ],
 });
 
 const mariana = createTheme({
@@ -75,7 +90,7 @@ const mariana = createTheme({
   secondaryTextColor: sunset["30"],
   secondaryHeaderTextColor: sunset["60"],
   tertiaryHeaderTextColor: sunset["90"],
-  headerColors: [green["100"], green["200"], green["200"], green["200"]],
+  headerColors: [blue["200"], blue["300"], blue["400"], blue["500"], "black"],
 });
 
 const fadedRainbow = createTheme({
@@ -89,7 +104,13 @@ const fadedRainbow = createTheme({
   headerTextColor: rainbow["100"],
   secondaryHeaderTextColor: rainbow["200"],
   tertiaryHeaderTextColor: rainbow["300"],
-  headerColors: [green["200"], green["200"], green["200"], green["200"]],
+  headerColors: [
+    rainbow["300"],
+    rainbow["400"],
+    rainbow["500"],
+    rainbow["100"],
+    rainbow["200"],
+  ],
 });
 
 const colors = {
