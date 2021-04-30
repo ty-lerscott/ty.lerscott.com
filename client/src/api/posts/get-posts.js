@@ -4,10 +4,7 @@ import { request, gql } from "graphql-request";
 
 import { formatDateString } from "utils/Date";
 
-const GENERIC_POST_TYPE = `
-  title,
-  date,
-  content(format: RENDERED)
+const CATEGORY_TYPE = `
   category: categories(first: 1, where: {orderby: TERM_ORDER}) {
     nodes {
       name
@@ -16,10 +13,31 @@ const GENERIC_POST_TYPE = `
   }
 `;
 
+const TAG_TYPE = `
+  tags {
+    nodes {
+      name,
+      slug
+    }
+  }
+`;
+
+const GENERIC_POST_TYPE = `
+  date,
+  title,
+  excerpt(format: RENDERED),
+  content(format: RENDERED),
+`;
+
+const stripHTML = (str = "") =>
+  str.replace(/(<([^>]+)>)|(\r|\n)/gi, "").replace("&#8217;", "'");
+
 const normalizePost = (post) => {
   const clonedPost = clone(post);
-  clonedPost.category = clonedPost.category.nodes[0];
+  clonedPost.tags = clonedPost.tags.nodes || [];
+  clonedPost.category = clonedPost.category.nodes[0] || {};
   clonedPost.date = formatDateString(clonedPost.date, "MMM d");
+  clonedPost.excerpt = stripHTML(clonedPost?.excerpt);
 
   return clonedPost;
 };
@@ -34,6 +52,8 @@ export const getBlogPosts = async ({ last = 50 } = { last: 50 }) => {
           nodes {
             slug
             ${GENERIC_POST_TYPE}
+            ${CATEGORY_TYPE}
+            ${TAG_TYPE}
           }
         }
       }
@@ -50,6 +70,8 @@ const postQuery = gql`
   query getPost($slug: ID!){
     post(id: $slug, idType: SLUG) {
       ${GENERIC_POST_TYPE}
+      ${CATEGORY_TYPE}
+      ${TAG_TYPE}
     }
   }
 `;

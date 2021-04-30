@@ -15,7 +15,7 @@ const postGridItemStyles = {
 
 const linkStyles = {
   mt: 10,
-  mb: 14,
+  mb: 12,
   textAlign: "center",
   justify: "center",
   alignItems: "center",
