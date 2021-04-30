@@ -19,7 +19,7 @@ const Home = ({ dehydratedState }) => {
   return (
     <>
       <Head>
-        <title>Tyler Scott Williams</title>
+        <title>Tyler Scott</title>
       </Head>
       <HomeHeader />
       <Blog mt={8} />

@@ -23,14 +23,24 @@ const BlogPost = ({ slug, dehydratedState }) => {
   } = useQueryClient().getQueryData(`blog-${slug}`);
 
   const keywords = tags.map(({ name }) => name).join(",");
+  const canonical = `https://ty.lerscott.com/blog/${slug}`;
 
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="keywords" content={keywords} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={excerpt} />
+        <meta property="og:url" content={canonical} />
+        {/* TODO: Put this site name in wordpress */}
+        <meta name="author" content="Tyler Scott" />
+        <meta property="og:site_name" content="Tyler Scott" />
+        {/* TODO: add some sort of unsplash image or something */}
+        {/* <meta property="og:image" content="LINK TO THE IMAGE FILE" /> */}
         {/* // TODO: GRAB this from env file instead */}
-        <link rel="canonical" href={`https://ty.lerscott.com/blog/${slug}`} />
+        <link rel="canonical" href={canonical} />
         <meta name="description" content={excerpt} />
       </Head>
       <Grid gridTemplateColumns="1fr auto" gap={12}>
