@@ -22,6 +22,18 @@ const wordpress = {
       },
     },
   },
+  ".FeaturedImageCaption": {
+    textAlign: "center",
+    fontSize: "xs",
+    letterSpacing: "1px",
+    color: "theme.secondaryTextColor",
+    a: {
+      color: "theme.textColor",
+      _hover: {
+        color: "theme.secondaryTextColor",
+      },
+    },
+  },
 };
 
 export default wordpress;

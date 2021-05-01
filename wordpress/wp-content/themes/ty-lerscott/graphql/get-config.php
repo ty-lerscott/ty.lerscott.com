@@ -12,13 +12,23 @@ function extend_wpgraphql_schema() {
         $first_name = $global_configurations_options['first_name_0']; // First Name
         $last_name = $global_configurations_options['last_name_1']; // Last Name
         $job_title = $global_configurations_options['job_title_2']; // Job Title
-        $location = $global_configurations_options['location_3']; // Job Title
+        $location = $global_configurations_options['location_3']; // Location
+        $meta_description = $global_configurations_options['meta_description_4']; // Meta Description
+        $meta_tags = $global_configurations_options['meta_tags_5']; // Meta Tags
+        $linkedin = $global_configurations_options['linkedin_6']; // Linkedin
+        $github = $global_configurations_options['github_7']; // Github
+        $twitter = $global_configurations_options['twitter_8']; // Twitter
 
         return [
-          'jobTitle' => $job_title,
+          'github' => $github,
+          'twitter' => $twitter,
+          'linkedin' => $linkedin,
+          'metaTags' => $meta_tags,
           'location' => $location,
-            'lastName' => $last_name,
-            'firstName' => $first_name,
+          'jobTitle' => $job_title,
+          'lastName' => $last_name,
+          'firstName' => $first_name,
+          'metaDescription' => $meta_description,
         ];
     }
   ] );
@@ -42,6 +52,27 @@ function extend_wpgraphql_schema() {
         'type' => 'String',
         'description' => __( 'My Current City', 'ty_lerscott-config' ),
       ],
+      'metaDescription' => [
+        'type' => 'String',
+        'description' => __( 'The Descrition for the Homepage', 'ty_lerscott-config' ),
+      ],
+      'metaTags' => [
+        'type' => 'String',
+        'description' => __( 'The Keywords for the Homepage', 'ty_lerscott-config' ),
+      ],
+      'linkedin' => [
+        'type' => 'String',
+        'description' => __( 'My Twitter Handle', 'ty_lerscott-config' ),
+      ],
+      'github' => [
+        'type' => 'String',
+        'description' => __( 'My Twitter Handle', 'ty_lerscott-config' ),
+      ],
+      'twitter' => [
+        'type' => 'String',
+        'description' => __( 'My Twitter Handle', 'ty_lerscott-config' ),
+      ]
+
     ],
   ] );
 };

@@ -5,12 +5,16 @@ import { QueryClient, useQueryClient } from "react-query";
 
 import { getMainMenu } from "api/menu/get-menu";
 import { GenericHeader } from "components/Header";
+import { uniqueWords } from "utils/normalizations";
+import { getConfig } from "api/config/get-config";
 import { getBlogPostBySlug } from "api/posts/get-posts";
 import BlogExcerpt from "components/BlogExcerpt/BlogExcerpt";
 import BlogPostHeader from "components/BlogPostHeader/BlogPostHeader";
+import BlogFeaturedImage from "components/BlogFeaturedImage/BlogFeaturedImage";
 
 const getPost = (slug) => () => getBlogPostBySlug(slug);
-
+const getEssentialConfigs = () =>
+  getConfig(["lastName", "metaTags", "firstName"]);
 const createMarkup = (content) => ({ __html: content });
 
 const BlogPost = ({ slug, dehydratedState }) => {
@@ -19,10 +23,19 @@ const BlogPost = ({ slug, dehydratedState }) => {
     title,
     content,
     excerpt,
+    featuredImage,
     ...headerProps
   } = useQueryClient().getQueryData(`blog-${slug}`);
 
-  const keywords = tags.map(({ name }) => name).join(",");
+  const { firstName, lastName, metaTags } = useQueryClient().getQueryData(
+    `configs`
+  );
+
+  const name = `${firstName} ${lastName}`;
+
+  const keywords = uniqueWords(
+    `${tags.map(({ name }) => name).join(",")},${metaTags}`
+  );
   const canonical = `https://ty.lerscott.com/blog/${slug}`;
 
   return (
@@ -34,11 +47,9 @@ const BlogPost = ({ slug, dehydratedState }) => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={excerpt} />
         <meta property="og:url" content={canonical} />
-        {/* TODO: Put this site name in wordpress */}
-        <meta name="author" content="Tyler Scott" />
-        <meta property="og:site_name" content="Tyler Scott" />
-        {/* TODO: add some sort of unsplash image or something */}
-        {/* <meta property="og:image" content="LINK TO THE IMAGE FILE" /> */}
+        <meta name="author" content={name} />
+        <meta property="og:site_name" content={name} />
+        <meta property="og:image" content={featuredImage.large} />
         {/* // TODO: GRAB this from env file instead */}
         <link rel="canonical" href={canonical} />
         <meta name="description" content={excerpt} />
@@ -47,6 +58,7 @@ const BlogPost = ({ slug, dehydratedState }) => {
         <GridItem>
           <BlogPostHeader title={title} {...headerProps} />
           <BlogExcerpt excerpt={excerpt} />
+          <BlogFeaturedImage image={featuredImage} />
           <Box
             as="main"
             mt={6}
@@ -66,6 +78,7 @@ export async function getServerSideProps({ params: { slug } }) {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery("main-menu", getMainMenu);
+  await queryClient.prefetchQuery("configs", getEssentialConfigs);
   await queryClient.prefetchQuery(`blog-${slug}`, getPost(slug));
 
   return {

@@ -3,6 +3,19 @@ import { useQuery } from "react-query";
 import { request, gql } from "graphql-request";
 
 import { formatDateString } from "utils/Date";
+import { stripHtml } from "utils/normalizations";
+
+const FEATURED_IMAGE_TYPES = `
+featuredImage {
+  node {
+    alt: altText
+    caption(format: RENDERED)
+    large: sourceUrl(size: LARGE)
+    medium: sourceUrl(size: MEDIUM)
+    thumbnail: sourceUrl(size: THUMBNAIL)
+  }
+}
+`;
 
 const CATEGORY_TYPE = `
   category: categories(first: 1, where: {orderby: TERM_ORDER}) {
@@ -29,15 +42,13 @@ const GENERIC_POST_TYPE = `
   content(format: RENDERED),
 `;
 
-const stripHTML = (str = "") =>
-  str.replace(/(<([^>]+)>)|(\r|\n)/gi, "").replace("&#8217;", "'");
-
 const normalizePost = (post) => {
   const clonedPost = clone(post);
   clonedPost.tags = clonedPost.tags.nodes || [];
   clonedPost.category = clonedPost.category.nodes[0] || {};
   clonedPost.date = formatDateString(clonedPost.date, "MMM d");
-  clonedPost.excerpt = stripHTML(clonedPost?.excerpt);
+  clonedPost.excerpt = stripHtml(clonedPost?.excerpt);
+  clonedPost.featuredImage = clonedPost.featuredImage.node;
 
   return clonedPost;
 };
@@ -54,6 +65,7 @@ export const getBlogPosts = async ({ last = 50 } = { last: 50 }) => {
             ${GENERIC_POST_TYPE}
             ${CATEGORY_TYPE}
             ${TAG_TYPE}
+            ${FEATURED_IMAGE_TYPES}
           }
         }
       }
@@ -72,6 +84,7 @@ const postQuery = gql`
       ${GENERIC_POST_TYPE}
       ${CATEGORY_TYPE}
       ${TAG_TYPE}
+      ${FEATURED_IMAGE_TYPES}
     }
   }
 `;

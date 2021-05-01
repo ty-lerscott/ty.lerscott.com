@@ -86,6 +86,46 @@ class GlobalConfigurations {
 			'global-configurations-admin', // page
 			'global_configurations_setting_section' // section
 		);
+
+		add_settings_field(
+			'meta_description_4', // id
+			'Meta Description', // title
+			array( $this, 'meta_description_4_callback' ), // callback
+			'global-configurations-admin', // page
+			'global_configurations_setting_section' // section
+		);
+
+		add_settings_field(
+			'meta_tags_5', // id
+			'Meta Tags', // title
+			array( $this, 'meta_tags_5_callback' ), // callback
+			'global-configurations-admin', // page
+			'global_configurations_setting_section' // section
+		);
+
+		add_settings_field(
+			'linkedin_6', // id
+			'LinkedIn', // title
+			array( $this, 'linkedin_6_callback' ), // callback
+			'global-configurations-admin', // page
+			'global_configurations_setting_section' // section
+		);
+
+		add_settings_field(
+			'github_7', // id
+			'GitHub', // title
+			array( $this, 'github_7_callback' ), // callback
+			'global-configurations-admin', // page
+			'global_configurations_setting_section' // section
+		);
+
+		add_settings_field(
+			'twitter_8', // id
+			'Twitter', // title
+			array( $this, 'twitter_8_callback' ), // callback
+			'global-configurations-admin', // page
+			'global_configurations_setting_section' // section
+		);
 	}
 
 	public function global_configurations_sanitize($input) {
@@ -104,6 +144,26 @@ class GlobalConfigurations {
 
 		if ( isset( $input['location_3'] ) ) {
 			$sanitary_values['location_3'] = sanitize_text_field( $input['location_3'] );
+		}
+
+		if ( isset( $input['meta_description_4'] ) ) {
+			$sanitary_values['meta_description_4'] = esc_textarea( $input['meta_description_4'] );
+		}
+
+		if ( isset( $input['meta_tags_5'] ) ) {
+			$sanitary_values['meta_tags_5'] = esc_textarea( $input['meta_tags_5'] );
+		}
+
+		if ( isset( $input['linkedin_6'] ) ) {
+			$sanitary_values['linkedin_6'] = sanitize_text_field( $input['linkedin_6'] );
+		}
+
+		if ( isset( $input['github_7'] ) ) {
+			$sanitary_values['github_7'] = sanitize_text_field( $input['github_7'] );
+		}
+
+		if ( isset( $input['twitter_8'] ) ) {
+			$sanitary_values['twitter_8'] = sanitize_text_field( $input['twitter_8'] );
 		}
 
 		return $sanitary_values;
@@ -141,6 +201,41 @@ class GlobalConfigurations {
 		);
 	}
 
+	public function meta_description_4_callback() {
+		printf(
+			'<textarea class="large-text" rows="5" name="global_configurations_option_name[meta_description_4]" id="meta_description_4">%s</textarea>',
+			isset( $this->global_configurations_options['meta_description_4'] ) ? esc_attr( $this->global_configurations_options['meta_description_4']) : ''
+		);
+	}
+
+	public function meta_tags_5_callback() {
+		printf(
+			'<textarea class="large-text" rows="5" name="global_configurations_option_name[meta_tags_5]" id="meta_description_4">%s</textarea>',
+			isset( $this->global_configurations_options['meta_tags_5'] ) ? esc_attr( $this->global_configurations_options['meta_tags_5']) : ''
+		);
+	}
+
+	public function linkedin_6_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="global_configurations_option_name[linkedin_6]" id="linkedin_6" value="%s">',
+			isset( $this->global_configurations_options['linkedin_6'] ) ? esc_attr( $this->global_configurations_options['linkedin_6']) : ''
+		);
+	}
+
+	public function github_7_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="global_configurations_option_name[github_7]" id="github_7" value="%s">',
+			isset( $this->global_configurations_options['github_7'] ) ? esc_attr( $this->global_configurations_options['github_7']) : ''
+		);
+	}
+
+	public function twitter_8_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="global_configurations_option_name[twitter_8]" id="twitter_8" value="%s">',
+			isset( $this->global_configurations_options['twitter_8'] ) ? esc_attr( $this->global_configurations_options['twitter_8']) : ''
+		);
+	}
+
 }
 if ( is_admin() )
 	$global_configurations = new GlobalConfigurations();
@@ -152,4 +247,9 @@ if ( is_admin() )
  * $last_name_1 = $global_configurations_options['last_name_1']; // Last Name
  * $job_title_2 = $global_configurations_options['job_title_2']; // Job Title
  * $location_3 = $global_configurations_options['location_3']; // Location
+ * $meta_description_4 = $global_configurations_options['meta_description_4']; // Meta Description
+ * $meta_tags_5 = $global_configurations_options['meta_tags_5']; // Meta Tags
+ * $linkedin_6 = $global_configurations_options['linkedin_6']; // LinkedIn
+ * $github_7 = $global_configurations_options['github_7']; // GitHub
+ * $twitter_8 = $global_configurations_options['twitter_8']; // Twitter
  */
