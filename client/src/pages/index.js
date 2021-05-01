@@ -26,14 +26,8 @@ const getEssentialConfigs = () =>
 const getPosts = () => getBlogPosts();
 
 const Home = ({ metaContent }) => {
-  const {
-    twitter,
-    metaTags,
-    lastName,
-    firstName,
-    metaDescription,
-    ...rest
-  } = metaContent;
+  const { twitter, metaTags, lastName, firstName, metaDescription, ...rest } =
+    metaContent || {};
 
   const name = `${firstName} ${lastName}`;
 
